@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-function Thumb({ label, id }) {
+function Thumb({ label, id, cover }) {
   return (
-    <li>
+    <li className="component thumb">
       <Link to={`/accommodation/${id}`}>
-        Thumb : {label} et id : {id}
+        <img src={cover} alt={`cover for` + id} />
+        <p>{label}</p>
       </Link>
     </li>
   );

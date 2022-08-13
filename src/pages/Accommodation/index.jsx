@@ -8,18 +8,17 @@ import Collapse from "../../components/collapse";
 function Accommodation() {
   let { id } = useParams();
   const accommodation = datas.filter((elt) => elt.id === id)[0];
-  console.log(accommodation);
   return (
-    <div className="accommodation">
+    <div className="page accommodation">
       <Gallery arrayOfImg={accommodation.pictures} />
       <p>{accommodation.title}</p>
       <p>{accommodation.location}</p>
-      <p>
+      <div>
         {accommodation.tags.map((tag) => (
           <Tag key={accommodation.id + tag} label={tag} />
         ))}
-      </p>
-      <Stars rating={accommodation.rating} />
+      </div>
+      <Stars rating={parseInt(accommodation.rating)} />
       <div>
         <p>{accommodation.host.name}</p>
         <img src={accommodation.host.picture} alt={accommodation.host.name} />
