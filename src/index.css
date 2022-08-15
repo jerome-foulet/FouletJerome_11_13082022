@@ -12,6 +12,12 @@ body {
   padding: 0;
 }
 
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Pages */
 .page {
   margin: 0;
@@ -147,8 +153,15 @@ body {
   border-radius: 5px;
 }
 
-.collapse__title::after {
+.collapse__title.arrow_down::after {
   content: url(./assets/open.png); /* Todo: change to close when show is true */
+  position: absolute;
+  right: 25px;
+  transform: scale(60%);
+}
+
+.collapse__title.arrow_up::after {
+  content: url(./assets/close.png); /* Todo: change to close when show is true */
   position: absolute;
   right: 25px;
   transform: scale(60%);
@@ -158,6 +171,12 @@ body {
   padding: 10px;
   border-radius: 5px;
   margin: 0;
+}
+
+.collapse__content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .gallery {
@@ -293,8 +312,119 @@ body {
   background-color: black;
   color: white;
   margin-top: 46px;
+
+  margin: auto 0;
+  margin-bottom: 0;
 }
 
 .footer img {
   display: block;
+}
+
+/* Responsive */
+
+@media screen and (min-width: 450px) {
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  /* Global */
+  body {
+    font-weight: 400;
+    font-size: 18px;
+    box-sizing: border-box;
+  }
+
+  /* Pages */
+  .page {
+    margin: 0;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .error .code {
+    font-size: 288px;
+  }
+
+  .error .message {
+    padding: 0;
+    margin-top: 100px;
+  }
+
+  .home__illustration {
+    margin-bottom: 43px;
+  }
+
+  .home__illustration img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 223px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .home__illustration span {
+    position: absolute;
+    top: 0;
+    left: 16px;
+    font-size: 24px;
+    line-height: 100%;
+    color: white;
+    text-align: left;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Component */
+  .collapse {
+    margin-bottom: 31px;
+  }
+
+  .collapse__title {
+    font-size: 24px;
+    padding: 7.5px 0 7.5px 18px;
+  }
+
+  .collapse__title.arrow_down::after,
+  .collapse__title.arrow_up::after {
+    right: 125px;
+    transform: none;
+  }
+
+  /* Header */
+  .header {
+    margin-left: 100px;
+    margin-right: 100px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .header img {
+    max-height: 62px;
+  }
+
+  .header ul {
+    gap: 57px;
+  }
+
+  .header li {
+    text-transform: none;
+  }
+
+  /* Footer */
+  .footer {
+    font-size: 24px;
+    font-weight: 500;
+    position: relative;
+    margin: auto 0;
+    margin-bottom: 0;
+  }
+
+  .footer p {
+    position: absolute;
+    bottom: 0px;
+  }
 }

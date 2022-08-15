@@ -26,11 +26,14 @@ function Accommodation() {
           <img src={accommodation.host.picture} alt={accommodation.host.name} />
         </div>
       </div>
-      <Collapse title="Description" content={accommodation.description} />
-      <Collapse
-        title="Équipements"
-        content={accommodation.equipments.join(" / ")}
-      />
+      <Collapse title="Description">{accommodation.description}</Collapse>
+      <Collapse title="Équipements">
+        <ul>
+          {accommodation.equipments.map((item) => (
+            <li key={accommodation.id + "_" + item}>{item}</li>
+          ))}
+        </ul>
+      </Collapse>
     </div>
   );
 }
