@@ -37,6 +37,11 @@ function Gallery({ arrayOfImg }) {
           />
         </div>
       )}
+      {arrayOfImg.length > 1 && (
+        <div className="gallery__counter">
+          {currentIndex + 1}/{arrayOfImg.length}
+        </div>
+      )}
     </div>
   );
 }

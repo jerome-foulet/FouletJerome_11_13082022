@@ -6,7 +6,7 @@ function Error() {
       <p className="code">404</p>
       <p className="message">
         Oups! La page que
-        <br /> vous demandez n'existe pas.
+        <br className="mobile-break" /> vous demandez n'existe pas.
       </p>
       <Link to="/" className="link">
         Retourner sur la page d’accueil

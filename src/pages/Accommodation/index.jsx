@@ -11,29 +11,36 @@ function Accommodation() {
   return (
     <div className="page accommodation">
       <Gallery arrayOfImg={accommodation.pictures} />
-      <div className="accommodation__infos">
-        <p>{accommodation.title}</p>
-        <p>{accommodation.location}</p>
-        <TagList
-          listOfTags={accommodation.tags}
-          accommodationId={accommodation.id}
-        />
-      </div>
-      <div className="accommodation__infosPlus">
-        <Stars rating={parseInt(accommodation.rating)} />
-        <div className="accommodation__infosPlus--host">
-          <p>{accommodation.host.name}</p>
-          <img src={accommodation.host.picture} alt={accommodation.host.name} />
+      <div className="accommodation__informations">
+        <div className="accommodation__infos">
+          <p>{accommodation.title}</p>
+          <p>{accommodation.location}</p>
+          <TagList
+            listOfTags={accommodation.tags}
+            accommodationId={accommodation.id}
+          />
+        </div>
+        <div className="accommodation__infosPlus">
+          <Stars rating={parseInt(accommodation.rating)} />
+          <div className="accommodation__infosPlus--host">
+            <p>{accommodation.host.name}</p>
+            <img
+              src={accommodation.host.picture}
+              alt={accommodation.host.name}
+            />
+          </div>
         </div>
       </div>
-      <Collapse title="Description">{accommodation.description}</Collapse>
-      <Collapse title="Équipements">
-        <ul>
-          {accommodation.equipments.map((item) => (
-            <li key={accommodation.id + "_" + item}>{item}</li>
-          ))}
-        </ul>
-      </Collapse>
+      <div className="accommodation__collapse">
+        <Collapse title="Description">{accommodation.description}</Collapse>
+        <Collapse title="Équipements">
+          <ul>
+            {accommodation.equipments.map((item) => (
+              <li key={accommodation.id + "_" + item}>{item}</li>
+            ))}
+          </ul>
+        </Collapse>
+      </div>
     </div>
   );
 }

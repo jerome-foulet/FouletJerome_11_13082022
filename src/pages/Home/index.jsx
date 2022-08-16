@@ -7,13 +7,12 @@ function Home() {
     <div className="page home">
       <div className="home__illustration">
         <img src={headerPng} alt="" />
-        <span>
+        <p>
           Chez vous,
-          <br />
-          partout et ailleurs
-        </span>
+          <br className="mobile-break" /> partout et ailleurs
+        </p>
       </div>
-      <div>
+      <div className="home__thumbs">
         <ul>
           {datas.map((loc) => (
             <Thumb
