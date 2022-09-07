@@ -311,6 +311,10 @@ body {
   text-underline-offset: 2px;
 }
 
+.header li a {
+  white-space: nowrap;
+}
+
 .header li :not(.active) {
   color: var(--main-color);
   text-decoration: none;
@@ -344,7 +348,7 @@ body {
 
 /* Responsive */
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1100px) {
   *,
   *:before,
   *:after {
@@ -475,8 +479,9 @@ body {
   }
 
   .home__thumbs ul {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: stretch;
     gap: 51px;
   }
 
@@ -555,8 +560,9 @@ body {
 
   .thumb {
     border-radius: 10px;
-    width: 340px;
-    height: 340px;
+
+    min-height: 340px;
+
     margin: 0;
     padding: 0;
   }
