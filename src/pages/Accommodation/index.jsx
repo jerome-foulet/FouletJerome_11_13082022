@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import datas from "../../data/logements.json";
 import Gallery from "../../components/gallery";
 import TagList from "../../components/tagList";
@@ -8,6 +8,9 @@ import Collapse from "../../components/collapse";
 function Accommodation() {
   let { id } = useParams();
   const accommodation = datas.filter((elt) => elt.id === id)[0];
+  if (accommodation === undefined) {
+    return <Navigate replace to="/error" />;
+  }
   return (
     <main className="page component accommodation">
       <article>
