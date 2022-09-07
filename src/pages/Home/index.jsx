@@ -4,27 +4,29 @@ import Thumb from "../../components/thumb";
 
 function Home() {
   return (
-    <div className="page home">
-      <div className="home__illustration">
-        <img src={headerPng} alt="" />
-        <p>
-          Chez vous,
-          <br className="mobile-break" /> partout et ailleurs
-        </p>
-      </div>
-      <div className="home__thumbs">
-        <ul>
-          {datas.map((loc) => (
-            <Thumb
-              key={loc.id}
-              id={loc.id}
-              label={loc.title}
-              cover={loc.cover}
-            />
-          ))}
-        </ul>
-      </div>
-    </div>
+    <main className="page component home">
+      <article>
+        <div className="home__illustration">
+          <img src={headerPng} alt="" />
+          <h1>
+            Chez vous,
+            <br className="mobile-break" /> partout et ailleurs
+          </h1>
+        </div>
+        <div className="home__thumbs">
+          <ul>
+            {datas.map((loc) => (
+              <Thumb
+                key={loc.id}
+                id={loc.id}
+                label={loc.title}
+                cover={loc.cover}
+              />
+            ))}
+          </ul>
+        </div>
+      </article>
+    </main>
   );
 }
 

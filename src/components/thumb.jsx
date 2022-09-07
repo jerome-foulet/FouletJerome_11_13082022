@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 function Thumb({ label, id, cover }) {
   return (
     <li className="component thumb">
-      <Link to={`/accommodation/${id}`}>
-        <img src={cover} alt={`cover for` + id} />
-        <p>{label}</p>
-      </Link>
+      <article>
+        <Link to={`/accommodation/${id}`}>
+          <img src={cover} alt={`cover for` + id} />
+          <h2>{label}</h2>
+        </Link>
+      </article>
     </li>
   );
 }

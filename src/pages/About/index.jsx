@@ -3,7 +3,7 @@ import Collapse from "../../components/collapse";
 
 function About() {
   return (
-    <div className="page about">
+    <main className="page component about">
       <img src={aboutPng} alt="" />
       <Collapse title="Fiabilité">
         Les annonces postées sur Kasa garantissent une fiabilité totale. Les
@@ -28,7 +28,7 @@ function About() {
         bien respectés. Nous organisons également des ateliers sur la sécurité
         domestique pour nos hôtes.
       </Collapse>
-    </div>
+    </main>
   );
 }
 

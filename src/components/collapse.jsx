@@ -11,17 +11,17 @@ function Collapse({ title, children }) {
   }
 
   return (
-    <div className="component collapse">
-      <div className={`collapse__title ` + arrowClass} onClick={switchContent}>
+    <article className="component collapse">
+      <h2 className={`collapse__title ` + arrowClass} onClick={switchContent}>
         {title}
-      </div>
+      </h2>
       <div
         className="collapse__content"
         style={{ display: show ? "block" : "none" }}
       >
         {children}
       </div>
-    </div>
+    </article>
   );
 }
 
