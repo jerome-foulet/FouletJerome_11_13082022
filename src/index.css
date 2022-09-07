@@ -493,6 +493,7 @@ body {
   .collapse__title {
     font-size: 24px;
     padding: 7.5px 0 7.5px 18px;
+    margin: 0;
   }
 
   .accommodation .collapse__title {
